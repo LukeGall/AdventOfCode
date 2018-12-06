@@ -7,35 +7,23 @@ Created on Wed Dec  5 20:34:49 2018
 
 input_file=open("input","r")
 lines=input_file.read().split("\n")
+lines.remove("")
 
-douCount=0
-triCount=0
-
-for line in lines:
-    if(len(line)!=0):
-        letters={}
-        contains2=False
-        contains3=False
-        
-        for letter in line:
-            if letter in letters:
-                val=letters.get(letter)+1
-                letters.update({letter:val})
-            else:
-                letters.update({letter:1})
-        
-        for let in letters:
-            if letters[let]==2:
-                contains2=True
-            elif letters[let]==3:
-                contains3=True
-        
-        if(contains2):
-            douCount+=1
-        if(contains3):
-            triCount+=1
-        
-print(douCount * triCount)
+for x in range(len(lines)):
+    for y in range(len(lines)):
+        if x>y:
+            word1=lines[x]
+            word2=lines[y]
+            if(word1!= word2):
+                pos=[]
+                for i in range(len(word1)):
+                    if(word1[i] != word2[i]):
+                            pos.append(i)
+                if(len(pos) == 1):
+                    newStr=word1.replace(word1[pos[0]],"")
+                    print(newStr)
+                    
+                        
         
         
         
