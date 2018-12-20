@@ -29,7 +29,7 @@ for line in lines:
     elif com[0] == 'w':
         endTime = min
         for i in range(startMin, endTime):
-            guards[id] += 1
+            guards[id, i] += 1
 
 
 max = 0
@@ -56,13 +56,7 @@ for line in lines:
         for i in range(startMin, endTime):
             mins[i] += 1
 
-maxMin = 0
-minNo = 0
-for m in range(60):
-    if mins[m] > maxMin:
-        maxMin = mins[m]
-        minNo = m
 
-print(gId, minNo)
+print(gId[0], gId[1])
 
-print(gId * minNo)
+print(gId[0] * gId[1])
