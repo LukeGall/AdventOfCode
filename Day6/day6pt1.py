@@ -34,19 +34,11 @@ def findClosetPoint(i, j):
 
 for i in range(maxI):
     edgePoints.add(findClosetPoint(i, 0))
-    if findClosetPoint(i, 0) == '5, 5':
-        print(i, 0)
     edgePoints.add(findClosetPoint(i, maxJ))
-    if findClosetPoint(i, maxJ) == '5, 5':
-        print(i, maxJ)
 
 for j in range(maxJ):
     edgePoints.add(findClosetPoint(0, j))
-    if findClosetPoint(0, j) == '5, 5':
-        print(0, j)
     edgePoints.add(findClosetPoint(maxI, j))
-    if findClosetPoint(maxI, j) == '5, 5':
-        print(maxI, j)
 
 for i in range(maxI):
     for j in range(maxJ):
